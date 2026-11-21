@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B0E14" />
+    <title>FAULTLINE</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0E14'/%3E%3Cpath d='M3 16h9l4-8 4 16 4-8h5' fill='none' stroke='%237DD3FC' stroke-width='2.5'/%3E%3C/svg%3E"
+    />
+    <!-- Tailwind CSS v4 (official browser build): five files leave no room for postcss/vite config -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      :root { color-scheme: dark; }
+      html, body, #root { height: 100%; margin: 0; }
+      #root { height: 100dvh; }
+      body { background: #0B0E14; overflow: hidden; overscroll-behavior: none; -webkit-tap-highlight-color: transparent; }
+      button { font-family: inherit; touch-action: manipulation; }
+      button:disabled { cursor: not-allowed; }
+      .fl-tile { outline: none; }
+      .fl-click { cursor: pointer; touch-action: manipulation; }
+      .fl-hit { fill: transparent; stroke: transparent; vector-effect: non-scaling-stroke; }
+      .fl-click:hover .fl-hit, .fl-click:focus-visible .fl-hit { stroke: #22D3EE; stroke-width: 1.5; fill: rgba(34, 211, 238, 0.07); }
+      .fl-rot { transform-box: fill-box; transform-origin: center; transition: transform 160ms ease-out; }
+      .fl-pulse { animation: fl-pulse 0.9s ease-in-out infinite; }
+      @keyframes fl-pulse { 50% { opacity: 0.45; } }
+      @media (prefers-reduced-motion: reduce) { .fl-rot { transition: none; } .fl-pulse { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/App.tsx"></script>
+  </body>
+</html>
